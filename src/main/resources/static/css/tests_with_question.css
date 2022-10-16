@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* CSS Document */
+head{
+    height: 10vh;
+}
+
+.toolbar{
+    background: #4c7daf;
+    height: 45px;
+    width: 100%;
+}
+
+.toolbar {
+
+}
+.toolbar a.back {
+    width: 5%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.back:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+.toolbar a.left {
+    width: 8.5%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.left:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+
+.toolbar a.right {
+    width: 8.5%;
+    height: 100%;
+    float: right;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.right:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+.toolbar a.center {
+    width: 10%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.center:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+
+
+body{
+    justify-content: space-around;
+    align-items: center;
+    background: #efefef;
+}
+
+.box{
+    margin-top: 20px;
+    width: 22%;
+    float: left;
+}
+
+.box ul a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.box ul:hover li{
+    /*opacity: 0.2;*/
+}
+.box a {
+    width: 150px;
+}
+.box a.edit{
+    margin-top: 60px;
+    margin-left: 40px;
+    list-style: none;
+    padding: 10px;
+
+    background: #fff;
+    box-shadow:  0 5px 25px rgba(0,0,0,.1);
+    transition: transform 0.5s;
+}
+
+.box ul li {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    box-shadow:  0 5px 25px rgba(0,0,0,.1);
+    transition: transform 0.5s;
+
+}
+.box ul li:hover{
+    transform: scale(1.1);
+    z-index: 100;
+    background: #fa952f;
+    box-shadow: 0 5px 25px rgba(0,0,0,.2);
+    color: #fff;
+    /*opacity: 1;*/
+}
+.box ul li span{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: #fa952f;
+    color: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.box ul li:hover span{
+    background: #fff;
+    color: #fa952f;
+
+}
+
+.itemtext{
+    margin-top: 20px;
+    margin-right: 40px;
+    width: 75%;
+    float: right;
+}
+.itemtext ul li {
+    list-style: none;
+    height: 120px;
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    box-shadow:  0 5px 25px rgba(0,0,0,.1);
+    transition: transform 0.5s;
+    line-height: 30px;
+
+}
+
+.itemtext ul li a{
+    float: right;
+    margin-right: 25px;
+}
+
+.itemtext button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    float: right;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+.box ul.btn{
+    margin-top: -10px;
+    width: 275px;
+}

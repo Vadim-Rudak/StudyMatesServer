@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>School-Helper</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-f14edf2c5828768997ebd57d41c9ec37.png" sizes="180x180">
+    <link rel="icon" href="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-f14edf2c5828768997ebd57d41c9ec37.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-f14edf2c5828768997ebd57d41c9ec37.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-f14edf2c5828768997ebd57d41c9ec37.png">
+    <link rel="icon" href="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-f14edf2c5828768997ebd57d41c9ec37.png">
+    <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.1/examples/sign-in/signin.css" rel="stylesheet">
+</head>
+<body class="text-center" style="background: #4c7daf">
+
+<main class="form-signin">
+    <form action="/login" method="post">
+        <img class="mb-4" src="https://storage.googleapis.com/multi-static-content/previews/artage-io-thumb-f14edf2c5828768997ebd57d41c9ec37.png" alt="" width="102" height="87">
+        <h1 class="h3 mb-3 fw-normal" style="color: white">School_Helper</h1>
+
+        <div class="form-floating">
+            <input type="text" maxlength="40" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput" style="color: #27425e">Введите имя</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" maxlength="40" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword" style="color: #27425e">Введите пароль</label>
+        </div>
+
+        <div class="checkbox mb-3">
+<!--            <label>-->
+<!--                <input type="checkbox" value="remember-me"> Remember me-->
+<!--            </label>-->
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" style="background-color:rgb(53,105,133)" type="submit">Войти</button>
+        <a href="/reg" style="color: white;text-decoration: none">Зарегистрироваться</a>
+        <p class="mt-5 mb-3 text-muted"><a style="color: white">&copy; 2022</a></p>
+    </form>
+</main>
+</body>
+</html>
+

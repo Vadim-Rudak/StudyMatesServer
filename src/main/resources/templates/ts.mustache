@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PageTests 111</title>
+    <link type="text/css" href="css/tests_with_question.css" rel="stylesheet" />
+
+
+    <div class="toolbar">
+        <a href="/menu" class="back">меню</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=1" class="left">1класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=2" class="left">2класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=3" class="left">3класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=4" class="left">4класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=5" class="left">5класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=6" class="center">6класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=11" class="right">11класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=10" class="right">10класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=9" class="right">9класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=8" class="right">8класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=7" class="right">7класс</a>
+
+    </div>
+</head>
+
+<body>
+
+<div class="box">
+    <ul style="overflow:auto; overflow-x:hidden; height: 450px;" >
+        {{#tests}}
+            <a href="/Quest?name_sub={{name_sub}}&num_class={{numclass}}&id_test={{id}}"><li><span>{{id}}</span>{{nametest}}</li></a>
+        {{/tests}}
+        <form method="post"></form>
+    </ul>
+    <ul class="btn">
+        <a href="/up_quest?id_test={{Id_test}}" ><li>Редактировать тест</li></a>
+    </ul>
+    <ul class="btn">
+        <a href="/add_quest?id_test={{Id_test}}"><li >Добавить вопрос</li></a>
+    </ul>
+    <ul class="btn">
+        <a href="/DeleteTest?name_sub={{name_sub}}&num_class={{num_c}}&id_test={{Id_test}}" ><li >Удалить тест</li></a>
+    </ul>
+</div>
+
+<div class="itemtext">
+    <ul style="overflow:auto; overflow-x:hidden; height: 584px;" >
+        {{#questions}}
+            <li>
+                <form name="question1" action="/UpdateQuestion" method="post">
+                    <i>Вопрос:</i>
+                    <input type="hidden" name="id" value="{{id}}">
+                    <input type="hidden" name="testid" value="{{testid}}">
+                    <input type="text" maxlength="100" size="50" name="question" value="{{question}}" style="margin-left: 26px">
+                    <i style="margin-left: 20px">Ответ №1:</i>
+                    <input type="text" maxlength="100" size="50" name="otv1" value="{{otv1}}" style="margin-left: 56px"><br>
+                    <i>Ответ №2:</i>
+                    <input type="text" maxlength="100" size="50" name="otv2" value="{{otv2}}">
+                    <i style="margin-left: 20px">Ответ №3:</i>
+                    <input type="text" maxlength="100" size="50" name="otv3" value="{{otv3}}" style="margin-left: 56px"><br>
+                    <i>Ответ №4:</i>
+                    <input type="text" maxlength="100" size="50" name="otv4" value="{{otv4}}">
+                    <i style="margin-left: 20px">Правильный ответ:</i>
+                    <input type="text" maxlength="100" size="50" name="correctotv" value="{{correctotv}}"><br>
+                    <a href="/DeleteQuestion?name_sub={{name_sub}}&num_class={{num_c}}&id_test={{Id_test}}&del_ques_id={{id}}" style="color: #BC0003;text-decoration: none">Удалить</a>
+
+                    <button style="color: #4c7daf;text-decoration: none" type="submit">Обновить</button>
+                </form>
+            </li>
+        {{/questions}}
+    </ul>
+</div>
+</body>
+</html>
+

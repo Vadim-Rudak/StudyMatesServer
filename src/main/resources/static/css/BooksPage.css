@@ -1,0 +1,116 @@
+head{
+    height: 10vh;
+}
+
+.toolbar{
+    background: #4c7daf;
+    height: 45px;
+    width: 100%;
+}
+
+.toolbar {
+
+}
+.toolbar a.back {
+    width: 5%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.back:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+.toolbar a.left {
+    width: 8.5%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.left:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+
+.toolbar a.right {
+    width: 8.5%;
+    height: 100%;
+    float: right;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.right:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+.toolbar a.center {
+    width: 10%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.toolbar a.center:hover {
+    background: #EEE2E2;
+    color: #4c7daf;
+}
+
+
+body{
+    justify-content: space-around;
+    align-items: center;
+    background: #efefef;
+}
+
+.btn_add_book{
+    margin-top: 15px;
+    margin-right: 1%;
+    float: right;
+}
+
+.itemtext{
+    margin-top: 50px;
+    margin-right: 1%;
+    margin-left: 1%;
+    width: 98%;
+
+}
+.itemtext ul li {
+    list-style: none;
+    height: 250px;
+    padding: 10px;
+    width: 18.6%;
+    float: left;
+    background: #fff;
+    box-shadow:  0 5px 25px rgba(0,0,0,.1);
+    transition: transform 0.5s;
+    line-height: 30px;
+
+}
+
+.itemtext ul li a.del{
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.itemtext button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    float: right;
+    margin-top: 12px;
+    margin-right: 8px;
+}

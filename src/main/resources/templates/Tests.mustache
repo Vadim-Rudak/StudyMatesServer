@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PageTests 111</title>
+    <link type="text/css" href="css/tests.css" rel="stylesheet" />
+
+    <div class="toolbar">
+        <a href="/menu" class="back">меню</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=1" class="left">1класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=2" class="left">2класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=3" class="left">3класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=4" class="left">4класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=5" class="left">5класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=6" class="center">6класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=11" class="right">11класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=10" class="right">10класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=9" class="right">9класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=8" class="right">8класс</a>
+        <a href="/Tests?name_sub={{name_sub}}&num_class=7" class="right">7класс</a>
+
+    </div>
+</head>
+
+<body>
+	<div class="box">
+	  <ul style="overflow:auto; overflow-x:hidden; height: 500px;" >
+          {{#tests}}
+             <a href="/Quest?id_test={{id}}&name_sub={{name_sub}}&num_class={{numclass}}"><li><span>{{id}}</span>{{nametest}}</li></a>
+          {{/tests}}
+      </ul>
+        <ul class="btn_add_test">
+            <a href="/add_test"><li>Добавить тест</li></a>
+        </ul>
+	</div>
+
+</body>
+</html>
