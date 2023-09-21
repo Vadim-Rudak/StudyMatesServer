@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers( "/res","/reg","/authoriz","/Questions","/ff","/Books","/ListTestsNames","/AllBooks","/bv","/create", "/vv","/reg","/GetIdBook").permitAll()
-                    .antMatchers(HttpMethod.POST,"/reg","/reg_mob","/AddNewFileAndroid","/addtest","/addquestion","/add_result").permitAll()
+                    .antMatchers(HttpMethod.POST,"/reg","/registration_mobile","/AddNewFileAndroid","/addtest","/addquestion","/add_result").permitAll()
                     .antMatchers(HttpMethod.POST, "/xv").hasAuthority("ADMIN")
                     .anyRequest().authenticated().and()
                 .formLogin()
@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance())
-                .usersByUsernameQuery("select login, password, active from usr where login=?")
-                .authoritiesByUsernameQuery("select u.login, ur.roles from usr u inner join user_role ur on u.id = ur.user_id where u.login=?");
+                .usersByUsernameQuery("select login, password, active from autoriz where login=?")
+                .authoritiesByUsernameQuery("select login, role from autoriz where login=?");
     }
 }

@@ -1,16 +1,17 @@
-package org.example.bookfd.domain;
+package org.example.bookfd.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.bookfd.domain.User;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Authoriz {
-    private Boolean status;
+public class Registration {
+    private Boolean status_reg;
     private String message;
-    private UserMod userMod;
+    private User user = null;
 }

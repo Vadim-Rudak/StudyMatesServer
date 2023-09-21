@@ -1,16 +1,13 @@
 package org.example.bookfd;
 
-import org.example.bookfd.domain.Reg;
+import org.example.bookfd.domain.Auth;
 import org.example.bookfd.domain.Role;
-import org.example.bookfd.domain.User;
+import org.example.bookfd.repos.AuthRepo;
 import org.example.bookfd.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Collections;
 import java.util.Map;
@@ -21,24 +18,27 @@ public class RegController {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private AuthRepo authRepo;
+
     @GetMapping("/reg")
     public String registration(){
         return "reg";
     }
     @PostMapping("/reg")
-    public String addUser(User user, Map<String, Object> model){
-        if (user.getLogin().equals("")||user.getPassword().equals("")){
+    public String addUser(Auth auth, Map<String, Object> model){
+        if (auth.getLogin().equals("")|| auth.getPassword().equals("")){
             model.put("ErrorName","Заполните поля");
             return "reg";
         }else{
-            User userDB = userRepo.findByLogin(user.getLogin());
-            if (userDB!=null){
+            Auth auth2 = authRepo.findByLogin(auth.getLogin());
+            if (auth2 !=null){
                 model.put("ErrorName","Пользователь с таким именем уже зарегистрирован");
                 return "reg";
             }else {
-                user.setActive(true);
-                user.setRoles(Collections.singleton(Role.USER));
-                userRepo.save(user);
+                auth.setActive(true);
+                auth.setRole(Collections.singleton(Role.USER).toString());
+                authRepo.save(auth);
                 return "redirect:/login";
             }
         }
