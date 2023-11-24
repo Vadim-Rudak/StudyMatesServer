@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Base64;
 
@@ -26,5 +23,15 @@ public class RestUser {
         return ResponseEntity.ok()
                 .contentType(MediaType.IMAGE_JPEG)
                 .body(Base64.getMimeDecoder().decode(photo.getRes()));
+    }
+
+    @PostMapping(value = "/Verification",produces = MediaType.APPLICATION_JSON_VALUE)
+    public String restSetVerification(@RequestParam(name="id", required=false, defaultValue="0") int id_user, Model model) {
+
+        Photo photo = photoRepo.findById(id_user);
+        photo.setVerification(true);
+        photoRepo.save(photo);
+
+        return " ";
     }
 }
