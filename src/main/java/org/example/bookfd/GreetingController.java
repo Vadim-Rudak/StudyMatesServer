@@ -2,6 +2,7 @@ package org.example.bookfd;
 
 
 import org.example.bookfd.domain.Message;
+import org.example.bookfd.domain.User;
 import org.example.bookfd.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

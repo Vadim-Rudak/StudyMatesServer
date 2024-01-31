@@ -26,16 +26,18 @@ public class RestLogin {
     @Autowired
     private PhotoRepo photoRepo;
 
+    static public Integer ID_USER;
+
 
     @GetMapping(value = "/authoriz",produces = MediaType.APPLICATION_JSON_VALUE)
     public Object addUserInClient(Authentication authentication){
         if (authentication != null){
             UserMod userMod = new UserMod();
             Auth auth = authRepo.findByLogin(authentication.getName());
-            int user_id = auth.getId();
-            User user = userRepo.findById(user_id);
-            School school = schoolRepo.findById(user_id);
-            Photo photo = photoRepo.findById(user_id);
+            ID_USER = auth.getId();
+            User user = userRepo.findById(ID_USER);
+            School school = schoolRepo.findById(ID_USER);
+            Photo photo = photoRepo.findById(ID_USER);
             photo.setRes(null);
 
             userMod.setUser(user);
