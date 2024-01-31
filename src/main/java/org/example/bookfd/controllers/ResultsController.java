@@ -1,4 +1,4 @@
-package org.example.bookfd;
+package org.example.bookfd.controllers;
 
 import org.example.bookfd.domain.TestsNames;
 import org.example.bookfd.repos.ResultsRepo;

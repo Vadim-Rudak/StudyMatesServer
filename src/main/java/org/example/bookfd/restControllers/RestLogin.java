@@ -1,4 +1,4 @@
-package org.example.bookfd.RestControllers;
+package org.example.bookfd.restControllers;
 
 import org.example.bookfd.domain.*;
 import org.example.bookfd.repos.AuthRepo;

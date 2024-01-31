@@ -1,4 +1,4 @@
-package org.example.bookfd;
+package org.example.bookfd.controllers;
 
 import org.example.bookfd.domain.Auth;
 import org.example.bookfd.domain.Role;

@@ -1,7 +1,5 @@
-package org.example.bookfd;
+package org.example.bookfd.restControllers;
 
-import org.example.bookfd.domain.AllNamesBooks;
-import org.example.bookfd.domain.Message;
 import org.example.bookfd.domain.Questions;
 import org.example.bookfd.domain.TestsNames;
 import org.example.bookfd.repos.QuestionsRepo;
@@ -14,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class ListTestController {
@@ -31,10 +28,6 @@ public class ListTestController {
     //(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model)
     @RequestMapping(value = "/ListTestsNames", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Object ms2(@RequestParam(name="subject", required=false, defaultValue="физика") String subject, Model model) {
-//        Message ms = new Message();
-//        ms.setId(54);
-//        ms.setText("gygygndj2");
-//        ms.setTag("gygyg");
         Iterable<TestsNames> ts = TestsNamesRepo.findBySubject(subject);
         return ts;
     }
@@ -48,8 +41,6 @@ public class ListTestController {
             questionsRepo.save(listQuestions.get(i));
         }
 
-//        questions.setTestid(Id_Question);
-//        questionsRepo.save(questions);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -57,8 +48,6 @@ public class ListTestController {
     @PostMapping("/addtest")
     public ResponseEntity<?> create(@RequestBody TestsNames testsNames)
     {
-//        int d = allNamesBooks.getId();
-        System.out.println(testsNames.getSubject());
 
         TestsNamesRepo.save(testsNames);
         Id_Question = testsNames.getId();

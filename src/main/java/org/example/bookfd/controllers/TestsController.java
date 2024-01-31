@@ -1,6 +1,5 @@
-package org.example.bookfd;
+package org.example.bookfd.controllers;
 
-import org.example.bookfd.domain.Message;
 import org.example.bookfd.domain.TestsNames;
 import org.example.bookfd.repos.TestsNamesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class TestsController {
     private TestsNamesRepo TestsNamesRepo;
 
     @RequestMapping("/Tests")
-    public String greeting1(@RequestParam(name="name_sub", required=false, defaultValue="Физика") String name_sub,@RequestParam(name="num_class", required=false, defaultValue="11") int num_class, Map<String, Object> model) {
+    public String tests(@RequestParam(name="name_sub", required=false, defaultValue="Физика") String name_sub,@RequestParam(name="num_class", required=false, defaultValue="11") int num_class, Map<String, Object> model) {
         String name_s = null;
         try {
             name_s = decodeString(name_sub);

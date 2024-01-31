@@ -1,6 +1,6 @@
 package org.example.bookfd.webSocket;
 
-import org.example.bookfd.RestControllers.RestLogin;
+import org.example.bookfd.restControllers.RestLogin;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;

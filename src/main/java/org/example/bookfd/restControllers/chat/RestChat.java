@@ -1,4 +1,4 @@
-package org.example.bookfd.RestControllers;
+package org.example.bookfd.restControllers.chat;
 
 import org.example.bookfd.domain.chat.Chat;
 import org.example.bookfd.domain.chat.Msg;

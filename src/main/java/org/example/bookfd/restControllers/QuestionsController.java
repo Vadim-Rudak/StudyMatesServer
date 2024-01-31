@@ -1,4 +1,4 @@
-package org.example.bookfd;
+package org.example.bookfd.restControllers;
 
 import org.example.bookfd.domain.Questions;
 import org.example.bookfd.repos.QuestionsRepo;

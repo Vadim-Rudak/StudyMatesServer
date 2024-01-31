@@ -1,18 +1,17 @@
-package org.example.bookfd;
+package org.example.bookfd.controllers;
 
-import org.aspectj.weaver.ast.Test;
 import org.example.bookfd.domain.Questions;
 import org.example.bookfd.domain.TestsNames;
 import org.example.bookfd.repos.QuestionsRepo;
 import org.example.bookfd.repos.TestsNamesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
@@ -29,8 +28,7 @@ public class AllQuestionsController {
 
     @Autowired
     private TestsNamesRepo TestsNamesRepo;
-/////////
-    //////Ghjdthbnm!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     @RequestMapping("/Quest")
     public String greeting1(@RequestParam(name="id_test", required=false, defaultValue="-1") int id_test,
                             @RequestParam(name="name_sub", required=false, defaultValue="-1") String name_sub,

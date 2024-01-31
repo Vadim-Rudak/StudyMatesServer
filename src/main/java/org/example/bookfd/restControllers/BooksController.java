@@ -1,4 +1,4 @@
-package org.example.bookfd;
+package org.example.bookfd.restControllers;
 
 import org.example.bookfd.domain.AllNamesBooks;
 import org.example.bookfd.domain.Books;
@@ -52,21 +52,8 @@ public class BooksController {
         return output;
     }
 
-//    @PostMapping("/add_book")
-//    public ResponseEntity<?> create(@RequestBody Books books)
-//    {
-////        try {
-////            booksRepo.save(new Books(books.getNumclass(),books.getNamebook(),encodeString(books.getResbook())));
-////        } catch (UnsupportedEncodingException e) {
-////            e.printStackTrace();
-////        }
-//        booksRepo.save(books);
-//        allNamesBooksRepo.save(new AllNamesBooks(books.getNumclass(),books.getNamebook()));
-//        return new ResponseEntity<>(HttpStatus.CREATED);
-//    }
-
-    @PostMapping ("/AddNewFileAndroid")
-    public ResponseEntity<?> AddNewFile4(@RequestParam(name="numclass", required=false, defaultValue="-1") int num_class,
+    @PostMapping ("/AddNewBook")
+    public ResponseEntity<?> addNewBook(@RequestParam(name="numclass", required=false, defaultValue="-1") int num_class,
                                          @RequestParam(name="namebook", required=false, defaultValue="-1") String name_book,
                                             @RequestParam("resbook") MultipartFile file) {
         Books bk = new Books();
@@ -88,10 +75,6 @@ public class BooksController {
 
     @RequestMapping(value = "/GetIdBook", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Object getIdBook(@RequestParam(name="num_class", required=false, defaultValue="11") int num_class, @RequestParam(name="name_book", required=false, defaultValue="Физика") String name_book, Model model) {
-//        Message ms = new Message();
-//        ms.setId(54);
-//        ms.setText("gygygndj2");
-//        ms.setTag("gygyg");
         Books book = booksRepo.findByNamebookAndNumclass(name_book,num_class);
         return book.getID();
     }
@@ -99,11 +82,6 @@ public class BooksController {
     @PostMapping("/up_book")
     public ResponseEntity<?> up_book(@RequestBody Books books)
     {
-//        try {
-//            booksRepo.save(new Books(books.getNumclass(),books.getNamebook(),encodeString(books.getResbook())));
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
         System.out.println(books.getID());
         int id = books.getID();
         Books book_copy = booksRepo.findByID(id);

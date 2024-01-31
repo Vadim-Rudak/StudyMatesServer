@@ -1,6 +1,5 @@
-package org.example.bookfd.RestControllers;
+package org.example.bookfd.restControllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.bookfd.domain.*;
 import org.example.bookfd.repos.AuthRepo;

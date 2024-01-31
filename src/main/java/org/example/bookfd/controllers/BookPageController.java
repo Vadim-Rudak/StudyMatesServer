@@ -1,27 +1,23 @@
-package org.example.bookfd;
+package org.example.bookfd.controllers;
 
 import org.example.bookfd.domain.AllNamesBooks;
 import org.example.bookfd.domain.BookUp;
 import org.example.bookfd.domain.Books;
-import org.example.bookfd.domain.Questions;
 import org.example.bookfd.repos.AllNamesBooksRepo;
 import org.example.bookfd.repos.BooksRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.Valid;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -35,16 +31,7 @@ public class BookPageController {
     private BooksRepo booksRepo;
 
     @RequestMapping(value = "/PageBooks",produces = MediaType.IMAGE_PNG_VALUE)
-    public String greeting1(@RequestParam(name="num_class", required=false, defaultValue="11") int num_class, Map<String, Object> model) {
-//        String name_s = null;
-//        try {
-//            name_s = decodeString(name_sub);
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        Iterable<TestsNames> tests = TestsNamesRepo.findBySubjectAndNumclass(name_s,num_class);
-//        model.put("tests", tests);
-//        model.put("name_sub", name_sub);
+    public String pageBooks(@RequestParam(name="num_class", required=false, defaultValue="11") int num_class, Map<String, Object> model) {
         Iterable<AllNamesBooks> books = allNamesBooksRepo.findByNumclass(num_class);
         model.put("books",books);
         model.put("num_cl",num_class);
@@ -237,12 +224,6 @@ public class BookPageController {
             }
         }
     }
-
-//    public class ImageUtil {
-//        public String getImgData(byte[] byteData) {
-//            return Base64.getMimeEncoder().encodeToString(byteData);
-//        }
-//    }
 
     public static String decodeString(String encodeText) throws UnsupportedEncodingException {
         byte[] decoded = Base64.getMimeDecoder().decode(encodeText);
