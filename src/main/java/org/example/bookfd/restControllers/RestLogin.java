@@ -5,14 +5,19 @@ import org.example.bookfd.repos.AuthRepo;
 import org.example.bookfd.repos.PhotoRepo;
 import org.example.bookfd.repos.SchoolRepo;
 import org.example.bookfd.repos.UserRepo;
+import org.example.bookfd.webSocket.MyHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.socket.TextMessage;
 
 @RestController
 public class RestLogin {
+
+    @Autowired
+    private MyHandler myHandler;
 
     @Autowired
     private AuthRepo authRepo;
@@ -44,6 +49,8 @@ public class RestLogin {
             userMod.setAuth(auth);
             userMod.setSchool(school);
             userMod.setPhoto(photo);
+
+            myHandler.sendMessageToUser(ID_USER, new TextMessage("UpdateInfoChat"));
 
             return new Authoriz(true,"Авторизация прошла успешно",userMod);
         }else{

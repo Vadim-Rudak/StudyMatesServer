@@ -1,14 +1,12 @@
 package org.example.bookfd.domain.chat;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -16,16 +14,11 @@ import javax.persistence.*;
 public class UsersInChat {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer ID;
 
-    private Integer chatid;
-    private Integer userid;
-    private Boolean group;
+    private int chatid;
+    private int userid;
+    private int gr;
 
-    public UsersInChat(Integer chatid, Integer userid, Boolean group) {
-        this.chatid = chatid;
-        this.userid = userid;
-        this.group = group;
-    }
 }
