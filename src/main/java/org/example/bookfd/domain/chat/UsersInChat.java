@@ -21,4 +21,9 @@ public class UsersInChat {
     private int userid;
     private int gr;
 
+    public UsersInChat(int chatid, int userid, int gr) {
+        this.chatid = chatid;
+        this.userid = userid;
+        this.gr = gr;
+    }
 }

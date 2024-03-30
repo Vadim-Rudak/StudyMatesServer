@@ -97,4 +97,16 @@ public class RestChat {
         return new ChatInfo(usersInChatList,listMessages);
     }
 
+    @PostMapping(value = "/addGroup",produces = MediaType.APPLICATION_JSON_VALUE)
+    public Object addGroupChat(@RequestParam(name="name_chat", required=false, defaultValue="11") String nameChat,
+                              @RequestParam(name="id_user_create", required=false, defaultValue="11") int idUserCreate,
+                               @RequestParam(name="list_users", required=false, defaultValue="0") List<Integer> listUsers) throws IOException {
+
+        Chat newChat = new Chat(nameChat,idUserCreate);
+        chatRepo.save(newChat);
+        listUsers.forEach((userId) -> usersInChatRepo.save(new UsersInChat(newChat.getID(),userId,1)));
+
+        return null;
+    }
+
 }

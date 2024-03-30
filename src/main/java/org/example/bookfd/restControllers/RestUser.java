@@ -49,9 +49,6 @@ public class RestUser {
     @RequestMapping(value = "/SelectUsers", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Object selectUsers(@RequestParam(name="list", required=false, defaultValue="0") List<Integer> listIds) {
 
-        System.out.println(listIds.get(0));
-        System.out.println(listIds.get(1));
-        System.out.println(listIds.get(2));
         return userRepo.findByIdIn(listIds);
     }
 }
