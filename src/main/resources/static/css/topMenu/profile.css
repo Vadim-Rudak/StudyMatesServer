@@ -1,0 +1,6 @@
+.profile_title{
+    padding: 24px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

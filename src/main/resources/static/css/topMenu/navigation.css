@@ -1,0 +1,36 @@
+.name_web{
+    height: 12vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name_site{
+    font-size: 32px;
+    color: rgb(34, 48, 248);
+}
+
+
+
+.tabs{
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.item_nav{
+    margin: 8px;
+    padding: 8px;
+}
+
+
+
+.logout{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

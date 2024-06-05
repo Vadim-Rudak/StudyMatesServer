@@ -1,0 +1,33 @@
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+    display: flex;
+    position: 0px;
+    margin: 0px;
+}
+
+
+
+.block_navigation{
+    flex-grow: 1;
+    height: 100vh;
+    background: white;
+}
+
+
+
+.block_info{
+    flex-grow: 4.3;
+    height: 100vh;
+    background: rgb(236, 237, 245);
+}
+
+
+
+.block_profile{
+    flex-grow: 1.5;
+    height: 100vh;
+    background: white;
+}

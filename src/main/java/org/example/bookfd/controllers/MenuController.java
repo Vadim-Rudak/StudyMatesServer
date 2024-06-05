@@ -12,7 +12,10 @@ public class MenuController {
     @GetMapping("/")
     public String start(Map<String, Object> model, Authentication authentication) {
         model.put("userstatus",authentication.getAuthorities());
-        return "StartPage";
+
+
+
+        return "menu/TopMenu";
     }
 
     @GetMapping("/menu")
