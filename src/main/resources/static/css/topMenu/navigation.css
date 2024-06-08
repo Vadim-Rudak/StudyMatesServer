@@ -26,6 +26,29 @@
     padding: 8px;
 }
 
+.dashboard-button {
+    display: flex;
+    align-items: center;
+    background-color: white; /* Background color similar to the image */
+    border: none;
+    border-radius: 20px; /* Rounded edges */
+    padding: 10px 20px;
+    color: #c1c1c1;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-button .icon {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.dashboard-button:hover {
+    background-color: #5a5e9b; /* Slightly lighter on hover */
+}
+
 
 
 .logout{
