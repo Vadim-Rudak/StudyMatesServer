@@ -1,3 +1,3 @@
 package org.example.bookfd
 
-public var ID_USER = 0
+var ID_USER = 0
