@@ -7,8 +7,9 @@
 }
 
 .name_site{
-    font-size: 32px;
-    color: rgb(34, 48, 248);
+    font-size: 28px;
+    font-weight: 600; 
+    color: #4c7daf;
 }
 
 
@@ -33,9 +34,9 @@
     border: none;
     border-radius: 20px; /* Rounded edges */
     padding: 10px 20px;
-    color: #c1c1c1;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
+    color: #969696;
+    font-size: 18px;
+    font-weight: 400;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -46,7 +47,8 @@
 }
 
 .dashboard-button:hover {
-    background-color: #5a5e9b; /* Slightly lighter on hover */
+    color: white;
+    background-color: #4c7daf; /* Slightly lighter on hover */
 }
 
 

@@ -6,12 +6,14 @@ body{
     display: flex;
     position: 0px;
     margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; 
 }
 
 
 
 .block_navigation{
-    flex-grow: 1;
+    flex-grow: 0.5;
     height: 100vh;
     background: white;
 }
@@ -27,7 +29,7 @@ body{
 
 
 .block_profile{
-    flex-grow: 1.5;
+    flex-grow: 1.3;
     height: 100vh;
     background: white;
 }
