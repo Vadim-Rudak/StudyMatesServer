@@ -54,6 +54,41 @@
     background-color: #4c7daf; /* Slightly lighter on hover */
 }
 
+.dashboard-button:hover .icon-book {
+    height: 24px;
+    background: url(images/book-icon-up.svg);
+}
+
+.dashboard-button:hover .icon-test {
+    height: 24px;
+    background: url(images/test-icon-up.svg);
+}
+
+.dashboard-button:hover .icon-result {
+    height: 24px;
+    background: url(images/result-icon-up.svg);
+}
+
+
+
+.icon-book{
+    height: 24px;
+    width: 24px;
+    background: url(images/book-icon-down.svg);
+}
+
+.icon-test{
+    height: 24px;
+    width: 24px;
+    background: url(images/test-icon-down.svg);
+}
+
+.icon-result{
+    height: 24px;
+    width: 24px;
+    background: url(images/result-icon-down.svg);
+}
+
 
 
 .logout{
