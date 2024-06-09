@@ -6,7 +6,7 @@ import org.example.bookfd.repos.AuthRepo
 import org.example.bookfd.repos.PhotoRepo
 import org.example.bookfd.repos.SchoolRepo
 import org.example.bookfd.repos.UserRepo
-import org.example.bookfd.restControllers.ID_USER
+import org.example.bookfd.ID_USER
 import org.example.bookfd.webSocket.MyHandler
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType

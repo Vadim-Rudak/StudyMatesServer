@@ -1,26 +1,31 @@
-package org.example.bookfd.webSocket;
+package org.example.bookfd.webSocket
 
-import org.springframework.http.server.ServerHttpRequest;
-import org.springframework.http.server.ServerHttpResponse;
-import org.springframework.http.server.ServletServerHttpRequest;
-import org.springframework.web.socket.WebSocketHandler;
-import org.springframework.web.socket.server.HandshakeInterceptor;
+import org.example.bookfd.ID_USER
+import org.springframework.http.server.ServerHttpRequest
+import org.springframework.http.server.ServerHttpResponse
+import org.springframework.http.server.ServletServerHttpRequest
+import org.springframework.web.socket.WebSocketHandler
+import org.springframework.web.socket.server.HandshakeInterceptor
 
-import java.util.Map;
-
-public class WebSocketInterceptor implements HandshakeInterceptor {
-
-    @Override
-    public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler handler, Map<String, Object> map) throws Exception {
-        if (request instanceof ServletServerHttpRequest) {
-            map.put("userId", RestLogin.ID_USER);
+class WebSocketInterceptor: HandshakeInterceptor {
+    override fun beforeHandshake(
+        request: ServerHttpRequest,
+        response: ServerHttpResponse,
+        wsHandler: WebSocketHandler,
+        map: MutableMap<String, Any>
+    ): Boolean {
+        if (request is ServletServerHttpRequest) {
+            map["userId"] = ID_USER
         }
-        return true;
+        return true
     }
 
-    @Override
-    public void afterHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Exception e) {
+    override fun afterHandshake(
+        request: ServerHttpRequest,
+        response: ServerHttpResponse,
+        wsHandler: WebSocketHandler,
+        exception: Exception?
+    ) {
 
     }
-
 }
