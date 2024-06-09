@@ -1,10 +1,8 @@
-package org.example.bookfd.repos;
+package org.example.bookfd.repos
 
-import org.example.bookfd.domain.Results;
-import org.springframework.data.repository.CrudRepository;
+import org.example.bookfd.domain.Results
+import org.springframework.data.repository.CrudRepository
 
-import java.util.List;
-
-public interface ResultsRepo extends CrudRepository<Results,Integer> {
-    List<Results> findByIdtest(int id_test);
+interface ResultsRepo : CrudRepository<Results?, Int?> {
+    fun findByIdtest(id_test: Int): List<Results?>?
 }

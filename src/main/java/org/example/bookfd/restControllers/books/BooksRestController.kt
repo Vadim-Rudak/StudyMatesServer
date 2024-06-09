@@ -33,7 +33,7 @@ class BooksRestController(
     @RequestMapping(value = ["/Books"], method = [RequestMethod.GET], produces = ["application/pdf"])
     fun getBookById(@RequestParam(name = "id", required = false, defaultValue = "11") bookId: Int) = ResponseEntity.ok()
         .contentType(MediaType.APPLICATION_PDF)
-        .body(decodeString(booksRepo.findByIdbook(bookId).resbook))
+        .body(decodeString(booksRepo.findByIdbook(bookId)?.resbook))
 
     /*
         Add new book
@@ -57,7 +57,7 @@ class BooksRestController(
     */
     @RequestMapping(value = ["/GetIdBook"], method = [RequestMethod.GET], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getIdBook(@RequestParam(name="num_class", required=false, defaultValue="11") numClass:Int, @RequestParam(name="name_book", required=false, defaultValue="Физика") nameBook:String) =
-        booksRepo.findByNamebookAndNumclass(nameBook, numClass).id
+        booksRepo.findByNamebookAndNumclass(nameBook, numClass)?.id
 
     /*
         Update file book

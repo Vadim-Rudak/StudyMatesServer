@@ -22,15 +22,15 @@ class UserRestController @Autowired constructor(
     @RequestMapping(value = ["/Photo"], method = [RequestMethod.GET], produces = ["application/jpeg"])
     fun getUserPhoto(@RequestParam(name="id", required=false, defaultValue="0") photoId:Int) = ResponseEntity.ok()
         .contentType(MediaType.IMAGE_JPEG)
-        .body(decodeString(photoRepo.findById(photoId).res))
+        .body(decodeString(photoRepo.findById(photoId)?.res))
 
     /*
         Set verification status
     */
     @PostMapping(value = ["/Verification"], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun verification(@RequestParam(name="id", required=false, defaultValue="0") userId:Int){
-        photoRepo.findById(userId).apply {
-            isVerification = true
+        photoRepo.findById(userId)?.apply {
+            verification = true
         }.also {
             photoRepo.save(it)
         }

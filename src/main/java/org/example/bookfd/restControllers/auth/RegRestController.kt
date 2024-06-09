@@ -45,12 +45,12 @@ class RegRestController @Autowired constructor(
         }
         userRepo.save(user)
 
-        authRepo.save(userMod.auth.apply { id = user.id })
-        photoRepo.save(userMod.photo.apply {
+        authRepo.save(userMod.auth?.apply { id = user.id }!!)
+        photoRepo.save(userMod.photo?.apply {
             id = user.id
             res = encodeString(filePhoto.bytes)
-        })
-        schoolRepo.save(userMod.school.apply { id = user.id })
+        }!!)
+        schoolRepo.save(userMod.school?.apply { id = user.id }!!)
         userMod.id = user.id
 
         return Registration(true,"Заполните поля",userMod)

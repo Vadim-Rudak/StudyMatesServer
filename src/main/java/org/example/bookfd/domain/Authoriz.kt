@@ -1,16 +1,14 @@
-package org.example.bookfd.domain;
+package org.example.bookfd.domain
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+class Authoriz {
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Authoriz {
-    private Boolean status;
-    private String message;
-    private UserMod userMod;
+    var status: Boolean? = null
+    var message: String? = null
+    var userMod: UserMod? = null
+
+    constructor(status: Boolean?, message: String?, userMod: UserMod?) {
+        this.status = status
+        this.message = message
+        this.userMod = userMod
+    }
 }

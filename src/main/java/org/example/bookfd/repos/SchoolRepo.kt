@@ -1,8 +1,8 @@
-package org.example.bookfd.repos;
+package org.example.bookfd.repos
 
-import org.example.bookfd.domain.School;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.example.bookfd.domain.School
+import org.springframework.data.jpa.repository.JpaRepository
 
-public interface SchoolRepo extends JpaRepository<School,Long> {
-    School findById(int id);
+interface SchoolRepo : JpaRepository<School?, Long?> {
+    fun findById(id: Int): School?
 }

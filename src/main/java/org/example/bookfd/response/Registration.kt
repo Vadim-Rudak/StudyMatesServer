@@ -1,17 +1,15 @@
-package org.example.bookfd.response;
+package org.example.bookfd.response
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.example.bookfd.domain.User;
+import org.example.bookfd.domain.User
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class Registration {
-    private Boolean status_reg;
-    private String message;
-    private User user = null;
+class Registration() {
+    var status_reg: Boolean? = null
+    var message: String? = null
+    var user: User? = null
+
+    constructor(status_reg: Boolean?, message: String?, user: User?) : this() {
+        this.status_reg = status_reg
+        this.message = message
+        this.user = user
+    }
 }

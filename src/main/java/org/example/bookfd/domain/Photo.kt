@@ -1,11 +1,12 @@
-package org.example.bookfd.domain;
+package org.example.bookfd.domain
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
+import lombok.AllArgsConstructor
+import lombok.Getter
+import lombok.NoArgsConstructor
+import lombok.Setter
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.Table
 
 @Getter
 @Setter
@@ -13,12 +14,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "photo")
-public class Photo {
-
+class Photo {
     @Id
-    private int id;
-    private boolean verification;
-    private String name;
-    private String res;
-    private String path;
+    var id = 0
+    var verification = false
+    var name: String? = null
+    var res: String? = null
+    var path: String? = null
 }

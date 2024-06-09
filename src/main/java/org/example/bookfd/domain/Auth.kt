@@ -1,35 +1,27 @@
-package org.example.bookfd.domain;
+package org.example.bookfd.domain
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.Table
 
-import javax.persistence.*;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "autoriz")
-public class Auth {
+class Auth {
 
     @Id
-    private int id;
-    private boolean active;
-    private String login;
-    private String password;
-    private String role;
+    var id: Int = 0
+    var active: Boolean = false
+    var login: String? = null
+    var password: String? = null
+    var role: String? = null
 
-    @Override
-    public String toString() {
+    override fun toString(): String {
         return "Auth{" +
                 "id=" + id +
                 ", active=" + active +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
-                '}';
+                '}'
     }
 }

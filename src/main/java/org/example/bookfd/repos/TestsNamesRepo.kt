@@ -1,17 +1,14 @@
-package org.example.bookfd.repos;
+package org.example.bookfd.repos
 
-import org.example.bookfd.domain.TestsNames;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import org.example.bookfd.domain.TestsNames
+import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
 
 @Repository
-public interface TestsNamesRepo extends CrudRepository<TestsNames,Integer> {
-    List<TestsNames> findBySubjectAndNumclass(String subject,int numclass);
-    List<TestsNames> findBySubject(String subject);
-    List<TestsNames> findByNumclass(int numclass);
-    TestsNames findByNametest(String name_test);
-    TestsNames findById(int id);
-
+interface TestsNamesRepo : CrudRepository<TestsNames?, Int?> {
+    fun findBySubjectAndNumclass(subject: String?, numclass: Int): List<TestsNames?>?
+    fun findBySubject(subject: String?): List<TestsNames?>?
+    fun findByNumclass(numclass: Int): List<TestsNames?>?
+    fun findByNametest(name_test: String?): TestsNames?
+    fun findById(id: Int): TestsNames?
 }

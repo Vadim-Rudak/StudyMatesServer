@@ -1,12 +1,9 @@
-package org.example.bookfd.repos;
+package org.example.bookfd.repos
 
-import org.example.bookfd.domain.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.example.bookfd.domain.User
+import org.springframework.data.jpa.repository.JpaRepository
 
-import java.util.List;
-
-public interface UserRepo extends JpaRepository<User,Long> {
-   User findById(int id);
-   List<User> findByIdIn(List<Integer> listUsersId);
-
+interface UserRepo : JpaRepository<User?, Int?> {
+    fun findById(id: Int): User?
+    fun findByIdIn(listUsersId: List<Int?>?): List<User?>?
 }

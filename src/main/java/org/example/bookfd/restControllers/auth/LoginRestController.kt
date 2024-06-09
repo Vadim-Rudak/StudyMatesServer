@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.socket.TextMessage
 
 @RestController
-class LoginRestController @Autowired constructor(
-    private val myHandler: MyHandler,
-    private val authRepo: AuthRepo,
-    private val userRepo: UserRepo,
-    private val schoolRepo: SchoolRepo,
-    private val photoRepo: PhotoRepo
+class LoginRestController (
+    @Autowired private val myHandler: MyHandler,
+    @Autowired private val authRepo: AuthRepo,
+    @Autowired private val userRepo: UserRepo,
+    @Autowired private val schoolRepo: SchoolRepo,
+    @Autowired private val photoRepo: PhotoRepo
 ) {
 
     /*
@@ -33,12 +33,12 @@ class LoginRestController @Autowired constructor(
         if (authentication!=null){
 
             val authFind = authRepo.findByLogin(authentication.name)
-            ID_USER = authFind.id
+            ID_USER = authFind!!.id
             val userMod = UserMod().apply {
-                setUser(userRepo.findById(ID_USER))
+                setUser(userRepo.findById(ID_USER)!!)
                 auth = authFind
                 school = schoolRepo.findById(ID_USER)
-                photo = photoRepo.findById(ID_USER).apply { res = null }
+                photo = photoRepo.findById(ID_USER)
             }
             myHandler.sendMessageToUser(ID_USER, TextMessage("UpdateInfoChat"))
 

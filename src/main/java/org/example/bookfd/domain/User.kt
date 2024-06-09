@@ -1,32 +1,21 @@
-package org.example.bookfd.domain;
+package org.example.bookfd.domain
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import javax.persistence.*
 
-import javax.persistence.*;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "usr")
-public class User {
-
+open class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO )
-    private int id;
-    private String name;
-    private String lastName;
-    private String gender;
-    private String dateBirthday;
-    private String cityLive;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open var id:Int = 0
+    open var name: String? = null
+    open var lastName: String? = null
+    open var gender: String? = null
+    open var dateBirthday: String? = null
+    open var cityLive: String? = null
 
 
-    @Override
-    public String toString() {
+    override fun toString(): String {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
@@ -34,6 +23,6 @@ public class User {
                 ", gender='" + gender + '\'' +
                 ", dateBirthday='" + dateBirthday + '\'' +
                 ", cityLive='" + cityLive + '\'' +
-                '}';
+                '}'
     }
 }
