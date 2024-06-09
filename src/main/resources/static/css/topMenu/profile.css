@@ -5,3 +5,73 @@
     justify-content: space-between;
     font-weight: 600; 
 }
+
+
+
+/* Основной контейнер блока профиля */
+.profile-block {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Заголовок блока профиля */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Фото профиля */
+.profile-picture {
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* Информация о профиле */
+.profile-info {
+    text-align: center;
+}
+.profile-info h2 {
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Статистика профиля */
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+    margin: 5px 0 0;
+}

@@ -29,7 +29,7 @@ body{
 
 
 .block_profile{
-    flex-grow: 1.3;
+    flex-grow: 0.7;
     height: 100vh;
     background: white;
 }
